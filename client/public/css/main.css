@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+body > section:not(.active) {
+    display: none;
+}
+
+/* Styles pour l'effet flou */
+.arriere-plan {
+    transition: filter 0.5s ease; /* Transition fluide pour le flou */
+}
+
+.arriere-plan.blurred {
+    filter: blur(5px); /* Flou de 5px */
+}
+
+/* Styles pour l'accueil */
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.logo-image {
+    max-width: 200px; /* Ajuste la taille maximale de l'image */
+    height: auto;
+}
+
+.connexion-container {
+    background-color: rgba(0, 100, 0, 0.7); /* Vert foncé semi-transparent */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px; /* Plus large selon la maquette */
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.connexion-container h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.connexion-container .form-control {
+    background-color: #d3d3d3; /* Gris clair */
+    border: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+.connexion-container .btn-play {
+    background-color: #ff0000; /* Rouge */
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* Effet 3D */
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+}
+
+.connexion-container .btn-play:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+.connexion-container .btn-rules {
+    background-color: #d3d3d3; /* Gris clair */
+    color: black;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 5px;
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+}
+
+/* Styles pour les boutons secondaires */
+.section-accueil .btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+/* Pareil pour les logos */
+.dynamicText {
+	opacity: 70;
+}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Hagar.io - Accueil</title>
+        <link rel="icon" href="images/favicon.ico"/>
+        <link rel="stylesheet" href="css/main.css"/>
+        <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+        <script src="build/main.bundle.js" defer></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        <script src="js/dynamicText.js" defer></script>
+    </head>
+    <body class="viewContainer d-flex flex-column align-items-center justify-content-center vh-100">
+        <canvas class="arriere-plan" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></canvas>
+        <section class="section-accueil">
+            <div class="logo-container">
+                <img src="images/HAGARIO.png" alt="Hagar.io Logo" class="logo-image" />
+            </div>
+            <div class="connexion-container">
+                <div class="dynamic-text" id="dynamicText"></div>
+                <input type="text" class="add-pseudo form-control mb-3" placeholder="Pseudo" />
+                <a href="/game" class="btn btn-play mb-3">Jouer</a>
+            </div>
+            <div class="position-absolute" style="top: 10px; left: 10px;">
+                <a href="/settings" class="btn btn-secondary">Paramètres</a>
+            </div>
+            <div class="position-absolute connectedUsers" style="top: 100px; left: 10px; color: white;">
+                Nombre d'utilisateurs connectés : 0
+            </div>
+            <div class="position-absolute" style="top: 10px; right: 10px;">
+                <a href="/rules" class="btn btn-secondary">Règles du jeu</a>
+            </div>
+            <div class="position-absolute" style="bottom: 10px; left: 10px;">
+                <a href="/leaderboard" class="btn btn-secondary">Classement</a>
+            </div>
+            <div class="position-absolute" style="bottom: 10px; right: 10px;">
+                <a href="/credits" class="btn btn-secondary">Crédits</a>
+            </div>
+        </section>
+        <section class="section-jeu">
+            <canvas class="game-canvas" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 0;"></canvas>
+            <div class="position-absolute" style="right: 0; top: 0; z-index: 1; font-size: 1.2rem; width: 250px;">
+                <div style="border: 1px solid #000; border-radius: 10px; background-color: rgba(0, 0, 0, 0.2); padding: 5px;">
+                    <h2 class="text-center mb-2" style="font-size: 1.5rem; font-weight: bold; color: white;">Classement</h2>
+                    <table class="leaderboard table table-sm table-striped table-bordered" style="background-color: rgba(0, 0, 0, 0.1); color: #ddd;">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th scope="position">P.</th>
+                                <th scope="pseudo">Pseudo</th>
+                                <th scope="score">Score</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <section class="section-rejouer">
+            <canvas class="arriere-plan2" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></canvas>
+            <div class="text-center p-4" style="border: 2px solid #000; border-radius: 10px; background-color: #f8f9fa; width: 300px;">
+                <h1 class="mb-4">Rejouer</h1>
+                <table class="rejouer_table table table-striped">
+                </table>
+                <input type="text" class="add-newPseudo form-control mb-3" placeholder="Pseudo" />
+                <a href="/game" class="btn btn-primary">Rejouer</a>
+            </div>
+            <div class="position-absolute" style="top: 10px; left: 10px;">
+                <a href="/settings" class="btn btn-secondary">Paramètres</a>
+            </div>
+            <div class="position-absolute" style="top: 10px; right: 10px;">
+                <a href="/rules" class="btn btn-secondary">Règles du jeu</a>
+            </div>
+            <div class="position-absolute" style="bottom: 10px; left: 10px;">
+                <a href="/leaderboard" class="btn btn-secondary">Classement</a>
+            </div>
+            <div class="position-absolute" style="bottom: 10px; right: 10px;">
+                <a href="/credits" class="btn btn-secondary">Crédits</a>
+            </div>
+        </section>
+        <section class="section-parametres">
+            <div class="settings-container text-center p-4" style="border: 2px solid #000; border-radius: 10px; background-color: #f8f9fa; max-width: 400px; margin: auto;">
+                <h1 class="mb-4" style="font-size: 2rem; font-weight: bold;">Paramètres</h1>
+                <div class="btn-group-vertical w-100 mb-3">
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="controlOption" id="controlKeyboard" value="keyboard" checked>
+                        <label class="form-check-label" for="controlKeyboard">
+                            Clavier
+                        </label>
+                    </div>
+                    <div class="form-check mb-2">
+                        <input class="form-check-input" type="radio" name="controlOption" id="controlMouse" value="mouse">
+                        <label class="form-check-label" for="controlMouse">
+                            Souris
+                        </label>
+                    </div>
+                </div>
+                <a href="/" class="btn btn-primary btn-lg">Revenir Accueil</a>
+            </div>
+        </section>
+        <section class="section-regles">
+            <div class="text-center p-4" style="border: 2px solid #000; border-radius: 10px; background-color: #f8f9fa; max-width: 600px; margin: auto;">
+            <h1 class="mb-4">Règles du jeu</h1>
+            <ul class="text-left" style="list-style-type: disc; padding-left: 20px;">
+                <li>Déplacez votre cellule pour manger les cellules plus petites et grandir.</li>
+                <li>Évitez les cellules plus grandes pour ne pas être mangé.</li>
+                <li>Utilisez les virus (cellules à visage) pour vous protéger ou attaquer d'autres joueurs.</li>
+                <li>Le but est de devenir la plus grande cellule sur le plateau.</li>
+            </ul>
+            <a href="/" class="btn btn-primary mt-3">Revenir Accueil</a>
+            </div>
+        </section>
+        <section class="section-classement" style="position: relative; width: 100%; height: 100vh; justify-content: center; align-items: center; overflow: hidden;">
+            <div class="text-center p-4" style="border: 2px solid #000; border-radius: 10px; background-color: #f8f9fa; width: 80%; height: 80%; margin: auto;">
+                <h1 class="mb-4">Classement</h1>
+                <div class="mb-3">
+                    <input type="text" class="btn-search-player form-control" placeholder="Rechercher un joueur">
+                </div>
+                <div style="max-height: 500px; overflow-y: auto;">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th scope="col">Position</th>
+                                <th scope="col">Nom</th>
+                                <th scope="col">
+                                    <button class="btn btn-sort-score btn-link p-0">Score</button>
+                                </th>
+                                <th scope="col">
+                                    <button class="btn btn-sort-time btn-link p-0">Temps tenu</button>
+                                </th>
+                                <th scope="col">
+                                    <button class="btn btn-sort-players btn-link p-0">Joueurs mangés</button>
+                                </th>
+                                <th scope="col">Date</th>
+                            </tr>
+                        </thead>
+                        <tbody id="leaderboardBody">
+                        </tbody>
+                    </table>
+                </div>
+                <a href="/" class="btn btn-primary mt-3">Quitter</a>
+            </div>
+        </section>
+        <section class="section-credits" style="position: relative; width: 100%; height: 100vh; justify-content: center; align-items: center; overflow: hidden;">
+            <canvas class="creditsCanvas" style="position: absolute; top: 10%; left: 10%; width: 25%; height: 25%; z-index: 1;"></canvas>
+            <article class="credits-block LUCAS">
+            <img src="images/lucas.png" alt="Lucas" style="position: absolute; top: 10%; left: 10%; width: 25%; height: 75%; object-fit: cover; margin-right: 5%;">
+            <div class="profile-card active d-flex" style="position: absolute; top: 10%; right: 10%; width: 50%; height: 75%; display: flex; flex-direction: column; justify-content: center; align-items: center; box-shadow: 0px 4px 10px white; border-radius: 10px;">
+                <div class="profile-info" style="font-size: 200%; color:white;">
+                <h2 style="font-size: 200%; margin-bottom: 20px; font-weight: bold;">Lucas De jesus teixeira</h2>
+                <p><strong>Groupe :</strong> I</p>
+                <p><strong>Surnom :</strong> Draggas</p>
+                <p><strong>Jeu vidéo préféré :</strong> HAGAR.IO</p>
+                <p><strong>Note attribuée :</strong> -100%</p>
+                </div>
+            </div>
+            </article>
+            <article class="credits-block NILS">
+            <img src="images/nils.png" alt="Lucas" style="position: absolute; top: 10%; left: 10%; width: 25%; height: 75%; object-fit: cover; margin-right: 5%;">
+            <div class="profile-card active d-flex" style="position: absolute; top: 10%; right: 10%; width: 50%; height: 75%; display: flex; flex-direction: column; justify-content: center; align-items: center; box-shadow: 0px 4px 10px white; border-radius: 10px;">
+                <div class="profile-info" style="font-size: 200%; color:white;">
+                    <h2 style="font-size: 200%; margin-bottom: 20px; font-weight: bold;">Nils Vanderschooten-Akinmoladun</h2>
+                <p><strong>Groupe :</strong> I</p>
+                <p><strong>Surnom :</strong> Naki28</p>
+                <p><strong>Jeu vidéo préféré :</strong> HAGAR.IO</p>
+                <p><strong>Note attribuée :</strong> -100%</p>
+                </div>
+            </div>
+            </article>
+            <article class="credits-block LOUIS">
+            <img src="images/louis.png" alt="Lucas" style="position: absolute; top: 10%; left: 10%; width: 25%; height: 75%; object-fit: cover; margin-right: 5%;">
+            <div class="profile-card active d-flex" style="position: absolute; top: 10%; right: 10%; width: 50%; height: 75%; display: flex; flex-direction: column; justify-content: center; align-items: center; box-shadow: 0px 4px 10px white; border-radius: 10px;">
+                <div class="profile-info" style="font-size: 200%; color:white;">
+                    <h2 style="font-size: 200%; margin-bottom: 20px; font-weight: bold;">Louis Beck</h2>
+                <p><strong>Groupe :</strong> I</p>
+                <p><strong>Surnom :</strong> Louis.etu</p>
+                <p><strong>Jeu vidéo préféré :</strong> HAGAR.IO</p>
+                <p><strong>Note attribuée :</strong> -100%</p>
+                </div>
+            </div>
+            </article>
+        
+            <button class="arrow-left" style="position: absolute; top: 50%; left: 5%; transform: translateY(-50%); width: 50px; height: 50px; border: none; background-color: #ddd; border-radius: 50%; cursor: pointer; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);">
+            &#8592;
+            </button>
+        
+            <button class="arrow-right" style="position: absolute; top: 50%; right: 5%; transform: translateY(-50%); width: 50px; height: 50px; border: none; background-color: #ddd; border-radius: 50%; cursor: pointer; box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);">
+            &#8594;
+            </button>
+        
+            <a href="/" class="btn" style="position: absolute; bottom: 5%; left: 50%; padding: 10px 20px; background-color: #ff4d4d; color: white;">
+            Quitter
+            </a>
+        </section>
+        
+    </body>
+</html>
